@@ -1,26 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Todo from './Todo'
 
-function App() {
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      list: [],
+      text: ''
+    }
+  }
+
+  buttonClick() {
+    let toPush = this.state.text
+    this.setState({list: this.state.list.concat(toPush)})
+    console.log(this.state.list)
+  }
+
+  changeHandler(e) {
+    this.setState({
+      text: e.target.value
+    })
+    console.log(this.state.text)
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input className='input-field'
+      onChange={e => this.changeHandler(e)}
+      type="text"
+      value={this.state.text}
+      ></input>
+      <button
+        onClick={() => this.buttonClick()}
+        
+      ></button>
     </div>
   );
 }
-
+}
 export default App;
