@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Routes from './routes'
 import {Link} from 'react-router-dom'
 import {HashRouter} from 'react-router-dom'
 
@@ -13,7 +12,6 @@ function App() {
         <Link to='/signup'>Signup</Link>
         <Link to='/details'>Details</Link>
       </nav>
-      {Routes}
     </div>
     </HashRouter>
   );

@@ -13,7 +13,6 @@ function App() {
         <Link to='/signup'>Signup</Link>
         <Link to='/details'>Details</Link>
       </nav>
-      {Routes}
     </div>
     </HashRouter>
   );
