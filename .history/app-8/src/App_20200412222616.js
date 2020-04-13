@@ -18,7 +18,7 @@ componentDidMount() {
   })
 }
 render(){
-  const mappedPokemon = this.state.pokemon.map((elem, index) => {
+  const mappedPokemon = this.state.pokemon.map(elem, index => {
     return (
       <div key={index}>{elem.name}</div>
     )

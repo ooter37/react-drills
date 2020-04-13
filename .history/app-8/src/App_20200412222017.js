@@ -6,7 +6,7 @@ export default class App extends React.Component {
 constructor() {
   super()
   this.state = {
-    pokemon: []
+    pokemon: {}
   }
 }
 componentDidMount() {
@@ -18,15 +18,11 @@ componentDidMount() {
   })
 }
 render(){
-  const mappedPokemon = this.state.pokemon.map((elem, index) => {
-    return (
-      <div key={index}>{elem.name}</div>
-    )
-  })
+  
   console.log(this.state.pokemon)
   return (
     <div className="App">
-      {mappedPokemon}
+
     </div>
   );
   }

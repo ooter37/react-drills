@@ -11,22 +11,18 @@ constructor() {
 }
 componentDidMount() {
   axios.get('https://pokeapi.co/api/v2/pokemon?limit=10').then(res => {
-
+    console.log(res)
+    console.log(`test ${res.data}`)
     this.setState({
       pokemon: res.data.results
     })
   })
+
 }
-render(){
-  const mappedPokemon = this.state.pokemon.map((elem, index) => {
-    return (
-      <div key={index}>{elem.name}</div>
-    )
-  })
-  console.log(this.state.pokemon)
+  render(){
   return (
     <div className="App">
-      {mappedPokemon}
+
     </div>
   );
   }
