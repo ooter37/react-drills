@@ -4,11 +4,11 @@ import React from 'react'
 
 export default function Todo(props) {
 
-
+    render() {
         return (
         <div>
-            {props.mappedTodo}
+            {this.props.mappedTodo}
         </div>
         )
-    
+    }
 }

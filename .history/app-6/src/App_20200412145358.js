@@ -13,10 +13,7 @@ class App extends Component {
   }
 
   buttonClick() {
-    this.setState({
-      list: [...this.state.list, this.state.text],
-      text: ''
-    })
+    this.setState({list: [...this.state.list, this.state.text]})
   }
 
   changeHandler(e) {
@@ -26,11 +23,6 @@ class App extends Component {
   }
 
   render() {
-    const mappedTodo = this.state.list.map((elem, index) => {
-      return (
-      <div key={index}>{elem}</div>
-      )
-    })
   return (
     <div className="App">
       <input className='input-field'
@@ -42,7 +34,7 @@ class App extends Component {
         onClick={() => this.buttonClick()}
         
       ></button>
-      <Todo mappedTodo={mappedTodo}/>
+      <Todo/>
     </div>
   );
 }

@@ -13,24 +13,19 @@ class App extends Component {
   }
 
   buttonClick() {
-    this.setState({
-      list: [...this.state.list, this.state.text],
-      text: ''
-    })
+    let toPush = this.state.text
+    this.setState({list: this.state.list.push(toPush)})
+    console.log(this.state.list)
   }
 
   changeHandler(e) {
     this.setState({
       text: e.target.value
     })
+    console.log(this.state.text)
   }
 
   render() {
-    const mappedTodo = this.state.list.map((elem, index) => {
-      return (
-      <div key={index}>{elem}</div>
-      )
-    })
   return (
     <div className="App">
       <input className='input-field'
@@ -42,7 +37,7 @@ class App extends Component {
         onClick={() => this.buttonClick()}
         
       ></button>
-      <Todo mappedTodo={mappedTodo}/>
+      <Todo/>
     </div>
   );
 }

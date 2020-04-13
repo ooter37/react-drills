@@ -13,10 +13,7 @@ class App extends Component {
   }
 
   buttonClick() {
-    this.setState({
-      list: [...this.state.list, this.state.text],
-      text: ''
-    })
+    this.setState({list: [...this.state.list, this.state.text]})
   }
 
   changeHandler(e) {
@@ -26,9 +23,9 @@ class App extends Component {
   }
 
   render() {
-    const mappedTodo = this.state.list.map((elem, index) => {
+    const mappedTodo = this.state.list.map(elem => {
       return (
-      <div key={index}>{elem}</div>
+      <div>{elem}</div>
       )
     })
   return (

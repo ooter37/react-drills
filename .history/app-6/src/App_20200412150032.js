@@ -26,9 +26,9 @@ class App extends Component {
   }
 
   render() {
-    const mappedTodo = this.state.list.map((elem, index) => {
+    const mappedTodo = this.state.list.map(elem => {
       return (
-      <div key={index}>{elem}</div>
+      <div>{elem}</div>
       )
     })
   return (
